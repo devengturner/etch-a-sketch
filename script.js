@@ -21,13 +21,16 @@ newButton.addEventListener("click", () => {
   }
 
   for (let i = 0; i < numSquares ** 2; i++) {
+    const redValue = Math.trunc(Math.random() * 256) + 1;
+    const greenValue = Math.trunc(Math.random() * 256) + 1;
+    const blueValue = Math.trunc(Math.random() * 256) + 1;
     const square = document.createElement("div");
     const squareSize = 960 / numSquares;
     square.style.height = `${squareSize}px`;
     square.style.width = `${squareSize}px`;
     square.classList.add("square-black");
     square.addEventListener("mouseover", () => {
-      square.classList.add("square-white");
+      square.style.backgroundColor = `rgb(${redValue}, ${blueValue}, ${greenValue})`;
     });
     containerEl.appendChild(square);
   }
